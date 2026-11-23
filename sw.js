@@ -1,4 +1,4 @@
-const VERSION='omda-shell-67d32abf78b1';const DATA='omda-library-v3';const scope=new URL(self.registration.scope);const assets=['./', './shell-67d32abf78b1-1.txt', './shell-67d32abf78b1-2.txt', './manifest.webmanifest', './icon-192.svg', './icon-512.svg'];
+const VERSION='omda-shell-7a2e10e5432a';const DATA='omda-library-v3';const scope=new URL(self.registration.scope);const assets=['./', './shell-7a2e10e5432a-1.txt', './shell-7a2e10e5432a-2.txt', './manifest.webmanifest', './icon-192.svg', './icon-512.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(assets)));});
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('omda-shell-')&&k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
